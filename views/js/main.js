@@ -473,6 +473,7 @@ NOT NEEDED ANY MORE :)
 
     }
     //loops randomPizzaContainer and updates its width property
+
     for (var i = 0; i < pizzaChangeLength; i++) {
     pizzaSizeChange[i].style.width = changedWidth + '%';
 
@@ -526,9 +527,11 @@ NOT NEEDED ANY MORE :)
 
 window.performance.mark("mark_start_generating"); // collect timing data
 
+//*No need for pizzaDiv to be inside loop
+//moved to outside of loop
+var pizzasDiv = document.getElementById("randomPizzas");
 // This for-loop actually creates and appends all of the pizzas when the page loads
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 

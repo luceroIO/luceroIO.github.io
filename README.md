@@ -1,6 +1,9 @@
 # luceroIO.github.io
 FEND website optimization project 
 
+Optimizations made to index.html
+
+
 
 Optimizations made to views/js/main.js
 
@@ -15,5 +18,4 @@ I placed these lines of code in the function their variables was referencing.
 ChangePizzaSizes , layout now doesn't get calculated at every step of the loop, more detail 
 on this around line 448. 
 
-
-
+-moved PizzaDiv out of the loop, more detail on this around line 530. 
