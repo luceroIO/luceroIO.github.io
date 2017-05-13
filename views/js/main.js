@@ -429,18 +429,63 @@ var resizePizzas = function(size) {
   }
 
   changeSliderLabel(size);
+/*
+NOT NEEDED ANY MORE :) 
 
    // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
-  function determineDx (elem, size) {
+ function determineDx (elem, size) {
     var oldWidth = elem.offsetWidth;
     var windowWidth = document.getElementById("randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
-    //placed 
+    //placed var dx and return dx was in another function ,
+    //I placed these lines of code in the function their variables was referencing
     var dx = (newSize - oldSize) * windowWidth;
-
     return dx;
   }
-  
+
+*/
+
+// sizeswitcher wasn't generating the correct %
+// changePizzaSizes was a mess , repeating so many variables that it didn't need it 
+
+  // goes  through pizza elements and changes their widths
+
+  //made  randomPizzaContainer a global variable, saves from looking up in each iteration 
+  var pizzaSizeChange = document.getElementsByClassName("randomPizzaContainer");
+  var pizzaChangeLength = pizzaSizeChange.length; 
+  function changePizzaSizes(size) {
+    var changedWidth; // variable updates values for pizza slider
+    //function sizeSwitcher didn't have to be a seperate function
+    switch(size) { 
+      //fixed the values so now the correct width % is used for styling
+      case "1":
+        changedWidth = 25;
+        break;
+      case "2":
+        changedWidth = 33.3;
+        break;
+      case "3":
+        changedWidth = 50;
+        break;
+      default:
+        //adjusted log message to reflect code changes 
+        console.log("bug in changePizzaSizes");
+
+    }
+    //loops randomPizzaContainer and updates its width property
+    for (var i = 0; i < pizzaChangeLength; i++) {
+    pizzaSizeChange[i].style.width = changedWidth + '%';
+
+    }
+  }
+
+  changePizzaSizes(size);
+ 
+
+
+
+/*  OLD CODE    
+
     // Changes the slider value to a percent width
     function sizeSwitcher (size) {
       switch(size) {
@@ -469,6 +514,8 @@ var resizePizzas = function(size) {
   }
 
   changePizzaSizes(size);
+*/
+
 
   // User Timing API is awesome
   window.performance.mark("mark_end_resize");
