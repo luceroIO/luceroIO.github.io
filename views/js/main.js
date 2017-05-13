@@ -435,7 +435,12 @@ var resizePizzas = function(size) {
     var oldWidth = elem.offsetWidth;
     var windowWidth = document.getElementById("randomPizzas").offsetWidth;
     var oldSize = oldWidth / windowWidth;
+    //placed 
+    var dx = (newSize - oldSize) * windowWidth;
 
+    return dx;
+  }
+  
     // Changes the slider value to a percent width
     function sizeSwitcher (size) {
       switch(size) {
@@ -451,9 +456,7 @@ var resizePizzas = function(size) {
     }
 
     var newSize = sizeSwitcher(size);
-    var dx = (newSize - oldSize) * windowWidth;
 
-    return dx;
   }
 
   // Iterates through pizza elements on the page and changes their widths
