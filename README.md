@@ -1,8 +1,21 @@
 # luceroIO.github.io
 FEND website optimization project 
 
-Optimizations made to index.html
+Setup this site up so all you have to do is 
 
+navigate to 
+  https://developers.google.com/speed/pagespeed/insights/
+
+and Analyze this url 
+  https://luceroio.github.io/
+
+
+Optimizations made to index.html
+- inlined CSS 
+- inlined JS
+- optimized images 
+
+* open up index.html for all the details 
 
 
 Optimizations made to views/js/main.js
