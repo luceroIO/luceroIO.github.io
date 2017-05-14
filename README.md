@@ -19,3 +19,10 @@ ChangePizzaSizes , layout now doesn't get calculated at every step of the loop, 
 on this around line 448. 
 
 -moved PizzaDiv out of the loop, more detail on this around line 530. 
+
+-modified updatePositons function moved part of calculation outside of loop and
+created an array for phase , no need for it to be created each time . more detail 
+on this around line 567.
+
+-background pizza could be reduced without losing effect but you gained speed , 
+more detail on this around line 609
