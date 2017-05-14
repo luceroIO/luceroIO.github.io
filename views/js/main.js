@@ -570,12 +570,13 @@ function updatePositions() {
   var phaseArray = [];
   for (var i = 0; i < 5; i++) {
     var phase = Math.sin(scrollTop + i%5);
-    phase = phaseArray.push(phase)
-  };
+    phase = phaseArray.push(phase);
+  }
 
-for (var i = 0; i < items.length; i++) {
-    var phase = phaseArray[i%5];
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+	//had to tweek to clear  JSHint errors
+	for (var n = 0; n < items.length; n++) {
+    var phas = phaseArray[n%5];
+    items[n].style.left = items[n].basicLeft + 100 * phas + 'px';
   }
 
 
@@ -619,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.style.width = "73.333px";
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
-    document.querySelector("#movingPizzas1").appendChild(elem);
+    document.getElementById("movingPizzas1").appendChild(elem);
   }
   updatePositions();
 });
