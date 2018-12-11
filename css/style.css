@@ -1,4 +1,10 @@
+body{
+	background-color: #632983;
+}
 
+
+
+/*
 .container{
 	display: flex;
 
@@ -12,7 +18,7 @@
 /*.pic{
 	background-color: blue;
 }
-*/
+
 
 
 
@@ -24,3 +30,6 @@
 		margin-right: auto;
 	}
 }
+
+*/
+
